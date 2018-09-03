@@ -1,0 +1,23 @@
+{
+  "name": "@hyperjump/hyperjump.io",
+  "version": "0.1.0",
+  "description": "An app for serving HyperJump Validation keyword definitions",
+  "scripts": {
+    "clean": "cat .gitignore | xargs rm -rf",
+    "start": "node index.js"
+  },
+  "repository": "github:jdesrosiers/hyperjump.io",
+  "keywords": [
+    "HyperJump",
+    "Validation",
+    "JSON",
+    "REST",
+    "Hypermedia"
+  ],
+  "author": "Jason Desrosiers <jdesrosi@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "koa": "^2.5.2"
+  },
+  "devDependencies": {}
+}
