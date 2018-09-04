@@ -1,8 +1,11 @@
-const Koa = require('koa');
+const http = require("http");
+const send = require("koa-send");
+const Koa = require("koa");
 const app = new Koa();
 
 app.use(async ctx => {
-  ctx.body = 'Hello World';
+  await send(ctx, ctx.path + ".json");
 });
 
-app.listen(process.env.PORT || 3000);
+const port = process.env.PORT || 3000;
+http.createServer(app.callback()).listen(port);
