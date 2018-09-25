@@ -1,4 +1,5 @@
 {
+  "$meta": { "$ref": "http://validation.hyperjump.io/common" },
   "anyOf": [
     { "const": "null" },
     { "const": "boolean" },

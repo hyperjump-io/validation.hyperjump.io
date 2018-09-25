@@ -1,3 +1,4 @@
 {
+  "$meta": { "$ref": "http://validation.hyperjump.io/common" },
   "type": "string"
 }
