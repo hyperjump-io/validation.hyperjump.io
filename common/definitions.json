@@ -1,0 +1,9 @@
+{
+  "$meta": { "$ref": "http://validation.hyperjump.io/common" },
+  "type": "object",
+  "patternProperties": {
+    "": {
+      "type": "object"
+    }
+  }
+}

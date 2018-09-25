@@ -2,6 +2,7 @@
   "allOf": "http://validation.hyperjump.io/common/allOf",
   "anyOf": "http://validation.hyperjump.io/common/anyOf",
   "const": "http://validation.hyperjump.io/common/const",
+  "definitions": "http://validation.hyperjump.io/common/definitions",
   "exclusiveMaximum": "http://validation.hyperjump.io/common/exclusiveMaximum",
   "exclusiveMinimum": "http://validation.hyperjump.io/common/exclusiveMinimum",
   "items": "http://validation.hyperjump.io/common/items",
