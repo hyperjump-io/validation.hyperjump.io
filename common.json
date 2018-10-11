@@ -22,6 +22,7 @@
   "properties": "http://validation.hyperjump.io/common/properties",
   "propertyNames": "http://validation.hyperjump.io/common/propertyNames",
   "required": "http://validation.hyperjump.io/common/required",
+  "validation": "http://validation.hyperjump.io/common/validation",
   "tupleItems": "http://validation.hyperjump.io/common/tupleItems",
   "type": "http://validation.hyperjump.io/common/type",
   "uniqueItems": "http://validation.hyperjump.io/common/uniqueItems"

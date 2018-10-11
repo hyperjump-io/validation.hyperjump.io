@@ -1,5 +1,8 @@
 {
   "$meta": { "$ref": "http://validation.hyperjump.io/common" },
   "type": "array",
-  "items": { "type": "object" }
+  "items": {
+    "type": "object",
+    "validation": true
+  }
 }

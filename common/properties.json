@@ -3,7 +3,8 @@
   "type": "object",
   "patternProperties": {
     "": {
-      "type": "object"
+      "type": "object",
+      "validation": true
     }
   }
 }
