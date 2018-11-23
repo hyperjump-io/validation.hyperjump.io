@@ -6,6 +6,7 @@ const app = new Koa();
 const year = 31536000000;
 
 app.use(async ctx => {
+  ctx.type = "application/validation+json";
   await send(ctx, ctx.path + ".json", { maxage: year, immutable: true });
 });
 
