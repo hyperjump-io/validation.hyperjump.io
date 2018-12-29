@@ -7,7 +7,7 @@
   "description": "An app for serving HyperJump Validation keyword definitions",
   "scripts": {
     "clean": "cat .gitignore | xargs rm -rf",
-    "start": "node index.js"
+    "start": "node server.js"
   },
   "repository": "github:jdesrosiers/hyperjump.io",
   "keywords": [
