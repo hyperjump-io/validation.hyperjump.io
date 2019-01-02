@@ -28,8 +28,9 @@ const conneg = (types) => (req, res, next) => {
 app.get("/common", conneg(["application/reference+json", "application/json"]));
 app.use("/common/*", conneg(["application/validation+json", "application/reference+json", "application/json"]));
 
+const year = 31536000000;
 app.get("*", (req, res) => {
-  return res.sendFile(`${__dirname}/${req.path}.json`);
+  return res.sendFile(`${__dirname}/${req.path}.json`, { maxAge: year, immutable: true });
 });
 
 const port = process.env.PORT || 3000;
