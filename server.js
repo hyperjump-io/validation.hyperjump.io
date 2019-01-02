@@ -15,14 +15,21 @@ app.use(cors(corsOptions));
 
 app.use(morgan("combined"));
 
-app.get("/common", (req, res) => {
-  res.set("Content-Type", "application/reference+json");
-  res.sendFile(`${__dirname}/common.json`);
-});
+const conneg = (types) => (req, res, next) => {
+  const contentType = req.accepts(types);
+  if (!contentType) {
+    res.status(406).end();
+  } else {
+    res.set("Content-Type", contentType);
+    next();
+  }
+};
 
-app.get("/common/:name", (req, res) => {
-  res.set("Content-Type", "application/validation+json");
-  res.sendFile(`${__dirname}/common/${req.params.name}.json`);
+app.get("/common", conneg(["application/reference+json", "application/json"]));
+app.use("/common/*", conneg(["application/validation+json", "application/reference+json", "application/json"]));
+
+app.get("*", (req, res) => {
+  return res.sendFile(`${__dirname}/${req.path}.json`);
 });
 
 const port = process.env.PORT || 3000;
