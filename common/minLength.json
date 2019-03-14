@@ -1,4 +1,4 @@
 {
-  "$meta": { "$ref": "http://validation.hyperjump.io/common" },
+  "$meta": { "$href": "http://validation.hyperjump.io/common" },
   "type": "number"
 }
