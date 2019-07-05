@@ -30,7 +30,14 @@ app.use("/common/*", conneg(["application/validation+json", "application/referen
 
 const year = 31536000000;
 app.get("*", (req, res) => {
-  return res.sendFile(`${__dirname}/${req.path}.json`, { maxAge: year, immutable: true });
+  try {
+    const template = require(`./templates${req.path}`);
+    const scheme = "cf-visitor" in req.headers ? JSON.parse(req.headers["cf-visitor"])["scheme"] : req.protocol;
+    res.setHeader("Cache-Control", `public, max-age=${year}, immutable`)
+    res.send(template({ origin: `${scheme}://${req.headers.host}` }));
+  } catch (e) {
+    res.status(404).end();
+  }
 });
 
 const port = process.env.PORT || 3000;

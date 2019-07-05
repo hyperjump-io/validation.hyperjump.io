@@ -3,8 +3,8 @@ validation.hyperjump.io
 
 An app for serving HyperJump Validation keyword definitions
 
-TODO
-----
+## Deployment
 
-* HTTPS support
-* HTTP/2 support
+The app is deployed to heroku. The site is served through Cloudflare.
+
+TODO: Automate deployment
