@@ -7,13 +7,15 @@
   "description": "An app for serving HyperJump Validation keyword definitions",
   "scripts": {
     "clean": "cat .gitignore | xargs rm -rf",
+    "dev": "nodemon server.js",
     "start": "node server.js"
   },
-  "repository": "github:jdesrosiers/hyperjump.io",
+  "repository": "github:jdesrosiers/validation.hyperjump.io",
   "keywords": [
-    "HyperJump",
+    "Hyperjump",
     "Validation",
-    "JSON",
+    "JSON Reference",
+    "JRef",
     "REST",
     "Hypermedia"
   ],
@@ -25,5 +27,7 @@
     "express": "^4.16.4",
     "morgan": "^1.9.1"
   },
-  "devDependencies": {}
+  "devDependencies": {
+    "nodemon": "^1.19.1"
+  }
 }
