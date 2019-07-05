@@ -1,19 +1,19 @@
 const express = require("express");
-const { decorateApp } = require("@awaitjs/express");
 const cors = require("cors");
 const morgan = require("morgan");
+const compression = require("compression");
 
 
-const app = decorateApp(express());
+const app = express();
 
 const corsOptions = {
-  origin: ["*"],
+  origin: true,
   maxAge: 3600,
   methods: ["HEAD", "GET"]
 };
 app.use(cors(corsOptions));
-
 app.use(morgan("combined"));
+app.use(compression());
 
 const conneg = (types) => (req, res, next) => {
   const contentType = req.accepts(types);
@@ -25,8 +25,8 @@ const conneg = (types) => (req, res, next) => {
   }
 };
 
-app.get("/common", conneg(["application/reference+json", "application/json"]));
-app.use("/common/*", conneg(["application/validation+json", "application/reference+json", "application/json"]));
+app.get("/common", conneg(["application/reference+json"]));
+app.use("/common/*", conneg(["application/validation+json"]));
 
 const year = 31536000000;
 app.get("*", (req, res) => {

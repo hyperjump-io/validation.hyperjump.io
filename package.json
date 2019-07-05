@@ -20,7 +20,7 @@
   "author": "Jason Desrosiers <jdesrosi@gmail.com>",
   "license": "MIT",
   "dependencies": {
-    "@awaitjs/express": "^0.1.4",
+    "compression": "^1.7.4",
     "cors": "^2.8.5",
     "express": "^4.16.4",
     "morgan": "^1.9.1"
